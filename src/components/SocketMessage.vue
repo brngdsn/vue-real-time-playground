@@ -13,7 +13,8 @@
     },
     computed: {
       ...mapGetters([
-        'message'
+        'message',
+        'connect'
       ])
     },
     methods: {
@@ -31,6 +32,12 @@
     },
     mounted () {
       console.log('* Mounted SocketMessage!')
+      let i = setInterval(() => {
+        if (this.connect) {
+          clearInterval(i)
+          this.$snackbar.open(`socket connected`)
+        }
+      }, 10)
     }
   }
 </script>
