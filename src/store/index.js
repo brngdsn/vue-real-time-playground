@@ -6,6 +6,9 @@ Vue.use(Vuex)
 Vue.use(VueResource)
 
 const types = {
+  SOCKET_INIT: 'SOCKET_INIT',
+  SOCKET_CONNECT: 'SOCKET_CONNECT',
+  SOCKET_MESSAGE: 'SOCKET_MESSAGE',
   LIST_RESOURCE: 'LIST_RESOURCE'
 }
 
@@ -18,9 +21,21 @@ const api = {
 }
 
 export default new Vuex.Store({
-  state: {},
-  getters: {},
+  state: {
+    connect: false,
+    message: null
+  },
+  getters: {
+    connect: state => state.connect,
+    message: state => state.message
+  },
   mutations: {
+    [types.SOCKET_CONNECT] (state, status) {
+      state.connect = true
+    },
+    [types.SOCKET_MESSAGE] (state, message) {
+      state.message = message
+    },
     [types.LIST_RESOURCE] (state, resource) {
       state[resource.prop] = resource.body
     }
