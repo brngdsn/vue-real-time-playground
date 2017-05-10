@@ -1,7 +1,7 @@
 {
-  "name": "socket-ui-playground",
+  "name": "vue-real-time-playground",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "vuejs and buefy project with vue-cli webpack template for vuex vue-socket.io real-time responsive front-end application",
   "author": "brn.gdsn@gmail.com",
   "private": true,
   "scripts": {

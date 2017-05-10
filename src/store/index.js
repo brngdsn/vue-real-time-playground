@@ -27,7 +27,7 @@ export default new Vuex.Store({
   },
   getters: {
     connect: state => state.connect,
-    message: state => state.message
+    message: state => JSON.parse(state.message)
   },
   mutations: {
     [types.SOCKET_CONNECT] (state, status) {

@@ -11,7 +11,8 @@ import store from './store'
 Vue.config.productionTip = false
 
 Vue.use(Buefy)
-Vue.use(VueSocketio, 'http://localhost:4500', store)
+Vue.use(VueSocketio, 'http://localhost:4500/some-resource', store)
+// Vue.use(VueSocketio, 'http://localhost:4500/some-more-resource', store)
 
 /* eslint-disable no-new */
 new Vue({
